@@ -1,0 +1,19 @@
+<p>Add a new task:</p>
+
+<form action="/final_list" method="post">
+  <label for="day">What day is this task for?</label>
+  <input id="day" name="day" type="text">
+
+  <label for="description">Task Description</label>
+  <input id="description" name="description" type="text">
+
+  <button type="submit">Add!</button>
+</form>
+
+<h1>Current Tasks</h1>
+
+<ul>
+  <% @tasks.each() do |task| %>
+    <li><%= task.description[0] %> - <%= task.description[1] %></li>
+    <% end %>
+</ul>
