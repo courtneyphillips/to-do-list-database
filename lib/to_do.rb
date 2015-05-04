@@ -25,12 +25,7 @@ class To_Do
   end
 
   define_method(:description) do
-    #  description = [self.day, self.task]
     @task
-  end
-
-  define_singleton_method(:clear) do
-    @@task_list = []
   end
 
   define_method(:==) do |another_task|
