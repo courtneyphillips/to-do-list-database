@@ -13,24 +13,29 @@ end
 describe(To_Do) do
 
   describe('#add') do
-    it ("Create a task and save that Task (class To_Do) to a overall list of tasks.") do
-      task1 = To_Do.new({:day => "Monday", :task => "Wash the car."})
-      task1.add()
-      expect(To_Do.all).to(eq([task1]))
+    it("adds a task to the array of saved tasks") do
+      test_task = To_Do.new({:task => "learn SQL"})
+      test_task.add()
+      expect(To_Do.all()).to(eq([test_task]))
     end
   end
 
+  # describe('.all') do
+  #   it("returns all data") do
+
+
+
   describe('#description') do
     it('reads out the description for chosen task') do
-      task1 = To_Do.new({:day => "Tuesday", :task => "Wash the dog."})
-      expect(task1.description()).to(eq(["Tuesday", "Wash the dog."]))
+      task1 = To_Do.new({:task => "Wash the dog."})
+      expect(task1.description()).to(eq("Wash the dog."))
     end
   end
 
   describe("#==") do
     it("is the same task if it has the same description") do
-      task1 = To_Do.new({:day => "Monday", :task => "learn SQL"})
-      task2 = To_Do.new({:day => "Monday", :task => "learn SQL"})
+      task1 = To_Do.new({:task => "learn SQL"})
+      task2 = To_Do.new({:task => "learn SQL"})
       expect(task1).to(eq(task2))
     end
   end
